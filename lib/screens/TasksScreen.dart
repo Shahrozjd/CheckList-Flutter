@@ -1,19 +1,18 @@
-
 import 'package:checklist/screens/AddTaskScreen.dart';
+import 'package:checklist/widgets/TaskList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TasksScreen extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFE766A),
       appBar: null,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          showModalBottomSheet(context: context, builder: (context)=> AddTaskScreen());
+        onPressed: () {
+          showModalBottomSheet(
+              context: context, builder: (context) => AddTaskScreen());
         },
         backgroundColor: Color(0xFFFE766A),
         child: Icon(Icons.add),
@@ -35,7 +34,7 @@ class TasksScreen extends StatelessWidget {
                   height: 80,
                   width: 80,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Color(0xFFFFFEE4),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -61,11 +60,12 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              child: null,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
-                  color: Color(0xFFFFFEE4)
-              ),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                  color: Color(0xFFFFFEE4)),
+              child: TaskList(),
             ),
           ),
         ],
@@ -73,3 +73,6 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+
+
+
